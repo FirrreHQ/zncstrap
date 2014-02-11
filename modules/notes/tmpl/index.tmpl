@@ -1,0 +1,62 @@
+<? INC Header.tmpl ?>
+
+<div class="container">
+	<div class="panel panel-default">
+		<div class="panel-heading">Notes</div>
+			<div class="panel-body">
+				<form class="form-horizontal" method="post" action="<? VAR ModPath ?>addnote">
+				<? INC _csrf_check.tmpl ?>
+				<h3>Add A Note</h3>
+				<hr>
+		
+				<div class="form-group">
+					<label for="inputKey" class="col-sm-2 control-label">Key:</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="inputKey" name="key" size="8">
+						</div>
+				</div>
+  
+  
+				<div class="form-group">
+					<label for="inputNote" class="col-sm-2 control-label">Note:</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="inputNote" name="note" size="40">
+						</div>
+				</div>
+
+  
+				<div class="btn-group pull-right">
+					<input class="btn btn-danger" type="reset" value="Reset">
+					<input class="btn btn-success" type="submit" name="add" value="Add Note"  />
+				</div>
+				</form>
+
+				<? IF !NotesLoop ?>
+					<p>You have no notes to display.</p>
+				<? ELSE ?>
+
+				<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<td></td>
+							<td>Key</td>
+							<td>Note</td>
+						</tr>
+					</thead>
+					<tbody>
+						<? LOOP NotesLoop ?>
+						<tr>
+							<td><a href="<? VAR ModPath TOP ?>delnote?key=<? VAR Key ESC=URL,HTML ?>" class="btn btn-danger btn-xs"></a></td>
+							<td><? VAR Key ?></td>
+							<td><? VAR Note ?></td>
+						</tr>
+						<? ENDLOOP ?>
+					</tbody>
+				</table>
+				<? ENDIF ?>
+
+			</div>
+	</div>
+</div>
+	
+<? INC Footer.tmpl ?>

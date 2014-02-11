@@ -1,0 +1,10 @@
+<? IF ModName ?>
+<div class="container">
+	<ol class="breadcrumb">
+	<li><a href="/">Home</a></li>
+	<li><a href="#"><? VAR ModName ?></a></li>
+	<? REM ?><? IF PageName ?><li><a href="#"><? VAR PageName ?></a></li><? ENDIF ?><? ENDREM ?>
+	<? IF Title && Title != *ModName ?><li class="active"><? VAR Title ?></li><? ENDIF ?>
+	</ol>
+</div>
+<? ENDIF ?>

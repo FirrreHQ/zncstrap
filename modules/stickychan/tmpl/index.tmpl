@@ -1,0 +1,41 @@
+<? INC Header.tmpl ?>
+
+<div class="container">
+	<div class="panel panel-default">
+		<div class="panel-heading">Stickychan</div>
+			<div class="panel-body">
+				<form class="form-horizontal" action="" method="post">
+				<? INC _csrf_check.tmpl ?>
+				<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<td>Name</td>
+							<td>Sticky</td>
+						</tr>
+					</thead>
+					<tbody>
+						<? LOOP ChannelLoop SORTASC=Name ?>
+						<tr>
+							<td><? VAR Name ?></td>
+							<td>
+								<div class="checkboxSwitchMini">
+									<input type="checkbox" id="stick_<? VAR Name ?>" name="stick_<? VAR Name ?>"<? IF Sticky ?> checked="checked"<? ENDIF ?> />
+									<label for="stick_<? VAR Name ?>"></label>
+								</div>
+							</td>
+						</tr>
+					<? ENDLOOP ?>
+					</tbody>
+				</table>
+	
+				<div class="btn-group pull-right">
+					<input class="btn btn-danger" type="reset" value="Reset">
+					<input type="hidden" name="submitted" value="1" />
+					<input class="btn btn-success" type="submit" value="Save" />
+				</div>
+				</form>
+			</div>
+	</div>
+</div>
+
+<? INC Footer.tmpl ?>
