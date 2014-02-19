@@ -81,7 +81,7 @@
 			<div class="form-group">
 				<label for="inputServers" class="col-sm-2 control-label">Servers of this IRC network:</label>
 					<div class="col-sm-10">
-						<textarea class="form-control" rows="5"><? LOOP ServerLoop ?><? VAR Server ?><? ENDLOOP ?></textarea>
+						<textarea class="form-control" name="servers" rows="5"><? LOOP ServerLoop ?><? VAR Server ?><? ENDLOOP ?></textarea>
 						<span class="help-block">One server per line, "host [[+]port] [password]", + means SSL</span>
 					</div>
 			</div>
