@@ -53,11 +53,10 @@
 						</li>	
 					<? ENDIF ?>
 				
-				<? IF UserModLoop ?>
+				<? IF GlobalModLoop || UserModLoop ?>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-wrench"></i> Settings <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-							<li class="dropdown-header">User Settings</li>
 								<? LOOP UserModLoop SORTASC=ModName ?>
 									<? LOOP SubPageLoop ?>
 									<li class="subitem<? IF Active ?> active<? ENDIF ?>"><a href="<? VAR ModPath ?><? VAR PageName ?><? IF Params ?>?<? VAR Params ?><? ENDIF ?>"><? VAR Title ?></a></li>
@@ -65,7 +64,7 @@
 								<? ENDLOOP ?>
 							</li>
 				<? IF GlobalModLoop ?>
-					<li class="dropdown-header">Global Settings</li>
+					<li class="dropdown-header">Global Module</li>
 						<? LOOP GlobalModLoop SORTASC=ModName ?>
 							<? LOOP SubPageLoop ?>
 								<li class="subitem<? IF Active ?> active<? ENDIF ?>"><a href="<? VAR ModPath ?><? VAR PageName ?><? IF Params ?>?<? VAR Params ?><? ENDIF ?>"><? VAR Title ?></a></li>
@@ -97,8 +96,6 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <? VAR SessionUser ?> <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="/mods/user/webadmin/edituser"><i class="fa fa-cogs"></i> Your Settings</a></li>
-								<li class="divider"></li>
 								<li><a href="/logout"><i class="fa fa-sign-out"></i> Sign Out</a></li>
 							</ul>
 					</li>
