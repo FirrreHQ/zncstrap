@@ -15,14 +15,14 @@
 					<label for="inputUsername" class="col-sm-2 control-label">Username:</label>
 						<div class="col-sm-10">
 						<? IF Clone ?>
-							<input type="hidden" class="form-control" id="inputUsername" name="clone" value="<? VAR CloneUsername ?>" />
+							<input type="hidden" class="form-control" id="inputUsername" name="clone" value="<? VAR CloneUsername ?>" autocomplete="off" />
 						<? ENDIF ?>
 	  
 						<? IF Edit ?>
-							<input type="hidden" class="form-control" id="inputUsername" name="user" value="<? VAR Username ?>" />
+							<input type="hidden" class="form-control" id="inputUsername" name="user" value="<? VAR Username ?>" autocomplete="off" />
 							<input type="text" class="form-control" id="inputUsername" name="newuser" value="<? VAR Username ?>" disabled="disabled" />
 						<? ELSE ?>
-							<input type="text" class="form-control" id="inputUsername" name="user" value="<? VAR Username ?>" placeholder="Please enter a username." />
+							<input type="text" class="form-control" id="inputUsername" name="user" value="<? VAR Username ?>" placeholder="Please enter a username." autocomplete="off" />
 						<? ENDIF ?>
 						</div>
 				</div>
@@ -31,14 +31,14 @@
 				<div class="form-group">
 					<label for="inputPassword" class="col-sm-2 control-label">Password:</label>
 						<div class="col-sm-10">
-							<input type="password" class="form-control" id="inputPassword" name="password" placeholder="Please enter a password.">
+							<input type="password" class="form-control" id="inputPassword" name="password" placeholder="Please enter a password." autocomplete="off">
 						</div>
 				</div>
   
 				<div class="form-group">
 					<label for="inputPassword2" class="col-sm-2 control-label">Confirm Password:</label>
 						<div class="col-sm-10">
-							<input type="password" class="form-control" id="inputPassword2" name="password2" placeholder="Please re-type the above password.">
+							<input type="password" class="form-control" id="inputPassword2" name="password2" placeholder="Please re-type the above password." autocomplete="off">
 						</div>
 				</div>
 
@@ -46,7 +46,7 @@
 				<div class="form-group">
 					<label for="inputAllowedIP" class="col-sm-2 control-label">Allowed IPs:</label>
 						<div class="col-sm-10">
-							<textarea class="form-control class="form-control" id="inputAllowedIP" name="allowedips" cols="70" rows="5"><? LOOP AllowedHostLoop ?><? VAR Host ?><? ENDLOOP ?></textarea>
+							<textarea class="form-control class="form-control" data-provide="markdown" id="inputAllowedIP" name="allowedips" cols="70" rows="5"><? LOOP AllowedHostLoop ?><? VAR Host ?><? ENDLOOP ?></textarea>
 							<div class="alert alert-info help-block">Leave empty to allow connections from all IPs. Otherwise, one entry per line, wildcards * and ? are available.</div>
 						</div>
 				</div>		
