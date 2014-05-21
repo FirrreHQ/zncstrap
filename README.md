@@ -32,6 +32,9 @@ A: Mainly because the different HTML tags and attributes used in zncstrap, as pa
 
 A: You should overwrite everything from '~/zncstrap/modules' to "~/znc/share/znc/modules" on your machine.
 
+**Q: When will support for v1.5-git be rolling out?
+
+A: We are working on it. It is in the May pipeline. 
 
 ### More information and screenshots
 Website: https://firrre.com/zncstrap
