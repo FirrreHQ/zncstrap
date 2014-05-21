@@ -34,9 +34,9 @@
 							<td><? VAR Info ?> <? VAR Ident ?></td>
 							<? IF WebAdminLoaded TOP ?>
 							<td>
-							<a href="/mods/global/webadmin/edituser?user=<?VAR Username ESC=URL?>" class="btn btn-primary btn-xs">Edit</a>
+							<a href="<? VAR URIPrefix TOP ?>/mods/global/webadmin/edituser?user=<?VAR Username ESC=URL?>" class="btn btn-primary btn-xs">Edit</a>
 								<? IF !IsSelf ?>
-									<a href="/mods/global/webadmin/deluser?user=<?VAR Username ESC=URL?>" class="btn btn-danger btn-xs">Delete</a>
+									<a href="<? VAR URIPrefix TOP ?>/mods/global/webadmin/deluser?user=<?VAR Username ESC=URL?>" class="btn btn-danger btn-xs">Delete</a>
 								<? ENDIF ?>
 							</td>
 							<? ENDIF ?>

@@ -84,7 +84,8 @@
 						<textarea class="form-control" name="servers" rows="5"><? LOOP ServerLoop ?><? VAR Server ?><? ENDLOOP ?></textarea>
 						<span class="help-block">One server per line, "host [[+]port] [password]", + means SSL</span>
 					</div>
-			</div>
+			</div>	
+			
 			 
 			<h3>Flood Protection</h3>
 			<hr>
@@ -199,9 +200,10 @@
 		<? ENDIF ?>
 	<? ENDLOOP ?>
 
-	<div class="btn-group pull-right">
+	<div class="pull-right">
 		<input class="btn btn-danger" type="reset" value="Reset">
-		<input class="btn btn-success" type="submit" value="<? IF Edit ?>Save<? ELSE ?>Add Network<? ENDIF ?>" />
+		<input class="btn btn-success" type="submit" name="submit_return" value="<? IF Edit ?>Save<? ELSE ?>Save Network<? ENDIF ?>" />
+ 		<input class="btn btn-default" type="submit" name="submit_continue" value="<? IF Edit ?>Save and continue<? ELSE ?>Save and continue<? ENDIF ?>" />
 	</div>
 				</form>
 			</div>

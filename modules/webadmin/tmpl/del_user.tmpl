@@ -9,13 +9,13 @@
 						<p>Are you absolutely sure you want to delete "<? VAR Username ?>"?</p>
 						<br>
 						<center>
-						<form action="deluser" method="post">
+						<form action="<? VAR URIPrefix TOP ?><? VAR ModPath TOP ?>deluser" method="post">
 						<? INC _csrf_check.tmpl ?>
 							<input type="hidden" name="submitted" value="1" />
 							<input type="hidden" name="user" value="<? VAR Username ?>" />
 							<input type="submit" class="btn btn-danger btn-xs" value="Yes, delete <? VAR Username ?>" />
 						</form><br>
-						<form action="listusers" method="get">
+						<form action="<? VAR URIPrefix TOP ?><? VAR ModPath TOP ?>listusers" method="get">
 							<input type="submit" class="btn btn-success btn-xs" value="No, do not delete <? VAR Username ?>" />
 						</form>
 						</center>

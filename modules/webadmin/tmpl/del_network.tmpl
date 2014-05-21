@@ -9,13 +9,13 @@
 						<p>Are you absolutely sure you want to delete <b>"<? VAR Network ?>"</b> network, <? VAR Username ?>?</p>
 						<br>
 						<center>
-						<form action="delnetwork" method="post">
+						<form action="<? VAR URIPrefix TOP ?><? VAR ModPath TOP ?>delnetwork" method="post">
 						<? INC _csrf_check.tmpl ?>
 							<input type="hidden" name="user" value="<? VAR Username ?>" />
 							<input type="hidden" name="name" value="<? VAR Network ?>" />
 							<input type="submit" class="btn btn-danger btn-xs" value="Yes, I want <? VAR Network ?> deleted" />
 						</form><br>
-						<form action="listusers" method="get">
+						<form action="<? VAR URIPrefix TOP ?><? VAR ModPath TOP ?>listusers" method="get">
 							<input type="submit" class="btn btn-success btn-xs" value="No, I want to keep <? VAR Network ?>" />
 						</form>
 						</center>

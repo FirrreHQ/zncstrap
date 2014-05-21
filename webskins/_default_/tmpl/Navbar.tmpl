@@ -7,17 +7,17 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/">ZNC</a>
+			<a class="navbar-brand" href="<? VAR URIPrefix TOP ?>/">ZNC</a>
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li class="topitem<? IF !ModName && PageName == "index" ?> active<? ENDIF ?>"><a href="/"><i class="fa fa-home"></i>  Home</a></li>
+				<li class="topitem<? IF !ModName && PageName == "index" ?> active<? ENDIF ?>"><a href="<? VAR URIPrefix TOP ?>/"><i class="fa fa-home"></i>  Home</a></li>
 					<? IF GlobalModLoop ?>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cog"></i> Global Modules <b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<? LOOP GlobalModLoop SORTASC=ModName ?>
-									<li class="modtitle<? IF Active ?> active<? ENDIF ?>"><a href="<? VAR ModPath ?>"><? VAR Title ?></a></li>
+									<li class="modtitle<? IF Active ?> active<? ENDIF ?>"><a href="<? VAR URIPrefix TOP ?><? VAR ModPath ?>"><? VAR Title ?></a></li>
 								<? ENDLOOP ?>
 							</ul>
 					</li>
@@ -28,7 +28,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cog"></i> User Modules <b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<? LOOP UserModLoop SORTASC=ModName ?>
-									<li class="modtitle<? IF Active ?> active<? ENDIF ?>"><a href="<? VAR ModPath ?>"><? VAR Title ?></a></li>					
+									<li class="modtitle<? IF Active ?> active<? ENDIF ?>"><a href="<? VAR URIPrefix TOP ?><? VAR ModPath ?>"><? VAR Title ?></a></li>					
 								<? ENDLOOP ?>
 							</ul>
 					</li>
@@ -42,9 +42,9 @@
 										<? IF ModLoop ?>
 											<li class="dropdown-header"><? VAR NetworkName ?></li>
 												<? LOOP ModLoop SORTASC=ModName ?>
-													<li class="modtitle<? IF Active ?> active<? ENDIF ?>"><a href="<? VAR ModPath ?>"><? VAR Title ?></a></li>
+													<li class="modtitle<? IF Active ?> active<? ENDIF ?>"><a href="<? VAR URIPrefix TOP ?><? VAR ModPath ?>"><? VAR Title ?></a></li>
 													<? LOOP SubPageLoop ?>
-													<li class="subitem<? IF Active ?> active<? ENDIF ?>"><a href="<? VAR ModPath ?><? VAR PageName ?><? IF Params ?>?<? VAR Params ?><? ENDIF ?>"><? VAR Title ?></a></li>
+													<li class="subitem<? IF Active ?> active<? ENDIF ?>"><a href="<? VAR URIPrefix TOP ?><? VAR ModPath ?><? VAR PageName ?><? IF Params ?>?<? VAR Params ?><? ENDIF ?>"><? VAR Title ?></a></li>
 													<? ENDLOOP ?>
 												<? ENDLOOP ?>
 										<? ENDIF ?>
@@ -59,7 +59,7 @@
 							<ul class="dropdown-menu">
 								<? LOOP UserModLoop SORTASC=ModName ?>
 									<? LOOP SubPageLoop ?>
-									<li class="subitem<? IF Active ?> active<? ENDIF ?>"><a href="<? VAR ModPath ?><? VAR PageName ?><? IF Params ?>?<? VAR Params ?><? ENDIF ?>"><? VAR Title ?></a></li>
+									<li class="subitem<? IF Active ?> active<? ENDIF ?>"><a href="<? VAR URIPrefix TOP ?><? VAR ModPath ?><? VAR PageName ?><? IF Params ?>?<? VAR Params ?><? ENDIF ?>"><? VAR Title ?></a></li>
 									<? ENDLOOP ?>
 								<? ENDLOOP ?>
 							</li>
@@ -67,7 +67,7 @@
 					<li class="dropdown-header">Global Module</li>
 						<? LOOP GlobalModLoop SORTASC=ModName ?>
 							<? LOOP SubPageLoop ?>
-								<li class="subitem<? IF Active ?> active<? ENDIF ?>"><a href="<? VAR ModPath ?><? VAR PageName ?><? IF Params ?>?<? VAR Params ?><? ENDIF ?>"><? VAR Title ?></a></li>
+								<li class="subitem<? IF Active ?> active<? ENDIF ?>"><a href="<? VAR URIPrefix TOP ?><? VAR ModPath ?><? VAR PageName ?><? IF Params ?>?<? VAR Params ?><? ENDIF ?>"><? VAR Title ?></a></li>
 						<? ENDLOOP ?>
 				<? ENDLOOP ?>
 				<? ELSE ?>
@@ -96,7 +96,7 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <? VAR SessionUser ?> <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="/logout"><i class="fa fa-sign-out"></i> Sign Out</a></li>
+								<li><a href="<? VAR URIPrefix TOP ?>/logout"><i class="fa fa-sign-out"></i> Sign Out</a></li>
 							</ul>
 					</li>
 				<? ENDIF ?>

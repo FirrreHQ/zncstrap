@@ -38,7 +38,7 @@
 				<div class="form-group">
 					<label for="inputPassword2" class="col-sm-2 control-label">Confirm Password:</label>
 						<div class="col-sm-10">
-							<input type="password" class="form-control" id="inputPassword2" name="password2" placeholder="Please re-type the above password." autocomplete="off">
+							<input type="password" class="form-control" id="inputPassword2" name="password2" placeholder="Please re-type the above password.">
 						</div>
 				</div>
 
@@ -335,9 +335,15 @@
 		<? ENDIF ?>
 		<? ENDLOOP ?>
 
-	<div class="btn-group pull-right">
-		<input class="btn btn-danger" type="reset" value="Reset">
-		<input class="btn btn-success" type="submit" value="<? IF Edit ?>Save<? ELSE ?><? IF Clone ?>Clone<? ELSE ?>Create<? ENDIF ?><? ENDIF ?>" />
+	<div class="pull-right">
+		<? IF ImAdmin ?>
+			<input class="btn btn-danger" type="reset" value="Reset">
+ 			<input class="btn btn-success" type="submit" name="submit_return" value="<? IF Edit ?>Save<? ELSE ?><? IF Clone ?>Clone<? ELSE ?>Create<? ENDIF ?><? ENDIF ?>" />
+ 			<input class="btn btn-default" type="submit" name="submit_continue" value="<? IF Edit ?>Save and continue<? ELSE ?><? IF Clone ?>Clone<? ELSE ?>Create<? ENDIF ?><? ENDIF ?>" />
+ 		<? ELSE ?>
+ 			<input class="btn btn-danger" type="reset" value="Reset">
+	  		<input class="btn btn-success" type="submit" value="<? IF Edit ?>Save<? ELSE ?><? IF Clone ?>Clone<? ELSE ?>Create<? ENDIF ?><? ENDIF ?>" />
+		<? ENDIF ?>
 	</div>
 				</form>
 			</div>

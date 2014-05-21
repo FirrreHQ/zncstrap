@@ -9,13 +9,13 @@
 	<meta charset="UTF-8" />
 	<title>ZNC &mdash; <? VAR Title DEFAULT="Web Frontend" ?></title>
 	<? LOOP FAVLOOP ?>
-	<?IF HREF?><link rel="shortcut icon" href="<? VAR HREF ?>"><?ENDIF?>
+	<?IF HREF?><link rel="shortcut icon" href="<? VAR URIPrefix TOP ?><? VAR HREF ?>"><?ENDIF?>
 	<?ENDLOOP?>
 	<? LOOP CSSLoop ?>
-	<?IF HREF?><link rel="stylesheet" type="text/css" href="<? VAR HREF ?>" /><?ENDIF?>
+	<?IF HREF?><link rel="stylesheet" type="text/css" href="<? VAR URIPrefix TOP ?><? VAR HREF ?>" /><?ENDIF?>
 	<?ENDLOOP?>
 	<? LOOP JSLoop ?>
-	<?IF HREF?><script type="text/javascript" src="<? VAR HREF ?>"></script><?ENDIF?>
+	<?IF HREF?><script type="text/javascript" src="<? VAR URIPrefix TOP ?><? VAR HREF ?>"></script><?ENDIF?>
 	<?ENDLOOP?>	
 	 <? INC ExtraHeader.tmpl ?>
 </head>

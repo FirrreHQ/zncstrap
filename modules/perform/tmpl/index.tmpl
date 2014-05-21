@@ -4,7 +4,7 @@
 	<div class="panel panel-default">
 		<div class="panel-heading">Perform</div>
 			<div class="panel-body">
-				<form method="post" action="<? VAR ModPath ?>">
+				<form method="post" action="<? VAR URIPrefix TOP ?><? VAR ModPath ?>">
 				<? INC _csrf_check.tmpl ?>
 				
 				<div class="form-group">

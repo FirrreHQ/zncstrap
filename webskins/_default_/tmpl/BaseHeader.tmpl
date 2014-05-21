@@ -1,23 +1,27 @@
 <? INC DocType.tmpl ?>
 <? ADDROW CSSLoop HREF=/skinfiles/_default_/bootstrap.min.css ?>
 <? ADDROW CSSLoop HREF=/skinfiles/_default_/font-awesome.min.css ?>
+
+<? ADDROW CSSLoop HREF=http://cdnjs.cloudflare.com/ajax/libs/bootstrap-markdown/2.1.1/css/bootstrap-markdown.min.css ?>
+<? ADDROW CSSLoop HREF=http://cdnjs.cloudflare.com/ajax/libs/bootstrap-markdown/2.1.0/js/bootstrap-markdown.js ?>
+
 <? ADDROW JSLoop HREF=/skinfiles/_default_/jquery.min.js ?>
 <? ADDROW JSLoop HREF=/skinfiles/_default_/bootstrap.min.js ?>
-<? ADDROW FAVLOOP HREF=/skinfiles/_default_/favicon.ico ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta charset="UTF-8" />
 	<title>ZNC &mdash; <? VAR Title DEFAULT="Web Frontend" ?></title>
-	<? LOOP FAVLOOP ?>
-	<?IF HREF?><link rel="shortcut icon" href="<? VAR HREF ?>"><?ENDIF?>
-	<?ENDLOOP?>
+	<link rel="shortcut icon" href="<? VAR URIPrefix TOP ?>/favicon.ico" type="image/x-icon" />
 	<? LOOP CSSLoop ?>
-	<?IF HREF?><link rel="stylesheet" type="text/css" href="<? VAR HREF ?>" /><?ENDIF?>
+	<?IF HREF?><link rel="stylesheet" type="text/css" href="<? VAR URIPrefix TOP ?><? VAR HREF ?>" /><?ENDIF?>
 	<?ENDLOOP?>
 	<? LOOP JSLoop ?>
-	<?IF HREF?><script type="text/javascript" src="<? VAR HREF ?>"></script><?ENDIF?>
+	<?IF HREF?><script type="text/javascript" src="<? VAR URIPrefix TOP ?><? VAR HREF ?>"></script><?ENDIF?>
 	<?ENDLOOP?>	
 	 <? INC ExtraHeader.tmpl ?>
+	 <script>
+	 	$("#textarea").markdown({autofocus:false,savable:false})
+	 </script>
 </head>
 <body>
 	<? INC Navbar.tmpl ?>

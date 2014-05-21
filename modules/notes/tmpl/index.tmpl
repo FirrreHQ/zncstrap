@@ -4,7 +4,7 @@
 	<div class="panel panel-default">
 		<div class="panel-heading">Notes</div>
 			<div class="panel-body">
-				<form class="form-horizontal" method="post" action="<? VAR ModPath ?>addnote">
+				<form class="form-horizontal" method="post" action="<? VAR URIPrefix TOP ?><? VAR ModPath ?>addnote">
 				<? INC _csrf_check.tmpl ?>
 				<h3>Add A Note</h3>
 				<hr>
@@ -24,37 +24,34 @@
 						</div>
 				</div>
 
-  
-				<div class="btn-group pull-right">
-					<input class="btn btn-danger" type="reset" value="Reset">
-					<input class="btn btn-success" type="submit" name="add" value="Add Note"  />
-				</div>
-				</form>
-
 				<? IF !NotesLoop ?>
-					<p>You have no notes to display.</p>
+					<div class="alert alert-warning">You have no notes to display.</div>
 				<? ELSE ?>
 
 				<table class="table table-bordered table-hover">
 					<thead>
 						<tr>
-							<td></td>
 							<td>Key</td>
 							<td>Note</td>
+							<td></td>
 						</tr>
 					</thead>
 					<tbody>
 						<? LOOP NotesLoop ?>
 						<tr>
-							<td><a href="<? VAR ModPath TOP ?>delnote?key=<? VAR Key ESC=URL,HTML ?>" class="btn btn-danger btn-xs"></a></td>
 							<td><? VAR Key ?></td>
 							<td><? VAR Note ?></td>
+							<td><a href="<? VAR URIPrefix TOP ?><? VAR ModPath TOP ?>delnote?key=<? VAR Key ESC=URL,HTML ?>" class="btn btn-danger btn-xs">Delete</a></td>
 						</tr>
 						<? ENDLOOP ?>
 					</tbody>
 				</table>
 				<? ENDIF ?>
-
+				<div class="pull-right">
+					<input class="btn btn-danger" type="reset" value="Reset">
+					<input class="btn btn-success" type="submit" name="add" value="Add Note"  />
+				</div>
+				</form>
 			</div>
 	</div>
 </div>
