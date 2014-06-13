@@ -84,7 +84,8 @@
 						<textarea class="form-control" name="servers" rows="5"><? LOOP ServerLoop ?><? VAR Server ?><? ENDLOOP ?></textarea>
 						<span class="help-block">One server per line, "host [[+]port] [password]", + means SSL</span>
 					</div>
-			</div>
+			</div>	
+			
 			 
 			<h3>Flood Protection</h3>
 			<hr>
@@ -141,8 +142,15 @@
 				<tbody>
 					<? LOOP ChannelLoop SORTASC=Name ?>
 					<tr>
-						<td><input type="hidden" name="channel" value="<? VAR Name ?>" /> <a href="editchan?user=<? VAR Username ESC=URL ?>&amp;network=<? VAR Network ESC=URL ?>&amp;name=<? VAR Name ESC=URL ?>" class="btn btn-warning btn-xs">Edit</a> <a href="delchan?user=<? VAR Username ESC=URL ?>&amp;network=<? VAR Network ESC=URL ?>&amp;name=<? VAR Name ESC=URL ?>" class="btn btn-danger btn-xs">Del</a> </td>
-						<td><input type="checkbox" name="save_<? VAR Name ?>"<? IF InConfig ?> checked="checked"<? ENDIF ?> /></td>
+						<td>
+							<input type="hidden" name="channel" value="<? VAR Name ?>" /> <a href="editchan?user=<? VAR Username ESC=URL ?>&amp;network=<? VAR Network ESC=URL ?>&amp;name=<? VAR Name ESC=URL ?>" class="btn btn-warning btn-xs">Edit</a> <a href="delchan?user=<? VAR Username ESC=URL ?>&amp;network=<? VAR Network ESC=URL ?>&amp;name=<? VAR Name ESC=URL ?>" class="btn btn-danger btn-xs">Del</a> 
+						</td>
+						<td>
+							<div class="checkboxSwitchMini">
+								<input type="checkbox" name="save_<? VAR Name ?>"<? IF InConfig ?> checked="checked"<? ENDIF ?> />
+								<label for="save_<? VAR Name ?>"></label>
+							</div>
+						</td>
 						<td><? VAR Name ?></td>
 						<td><? VAR CurModes ?></td>
 						<td><? VAR DefModes ?></td>
