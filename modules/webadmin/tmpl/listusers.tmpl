@@ -1,6 +1,6 @@
 <? INC Header.tmpl ?>
 
-<div class="container">
+<div class="container col-md-10 col-md-offset-1">
 	<div class="panel panel-default">
 		<div class="panel-heading">List of Users</div>
 			<div class="panel-body">
@@ -27,7 +27,7 @@
 				<table class="table table-bordered table-hover table-striped table-list-search">
 					<thead>
 						<tr>
-							<td>Action</td>
+							<td><a href="<? VAR URIPrefix TOP ?><? VAR ModPath TOP ?>adduser" class="btn btn-default btn-xs">Add</a></td>
 							<td>Username</td>
 							<td>Networks</td>
 							<td>Clients</td>

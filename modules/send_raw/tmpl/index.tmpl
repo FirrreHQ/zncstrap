@@ -1,15 +1,13 @@
 <? ADDROW JSLoop HREF=/modfiles/user/send_raw/select.js ?>
 <? INC Header.tmpl ?>
 
-<div class="container">
+<div class="container col-md-10 col-md-offset-1">
 	<div class="panel panel-default">
-		<div class="panel-heading">Send RAW</div>
+		<div class="panel-heading">Send RAW &middot; Send a raw IRC line</div>
 			<div class="panel-body">
 				<form class="form-horizontal" method="post" action="<? VAR URIPrefix TOP ?><? VAR ModPath ?>">
 				<? INC _csrf_check.tmpl ?>
-				<h3>Send a raw IRC line</h3>
-				<hr>
-
+				
 				<div class="form-group">
 					<label for="inputUser" class="col-sm-2 control-label">User:</label>
 						<div class="col-sm-10">
@@ -48,13 +46,13 @@
 						<input type="text" class="form-control" id="inputLine" name="line" value="<? VAR line ?>">
 					</div>
 			</div>
-
-			<div class="btn-group pull-right">
+			</div>
+			
+			<div class="panel-footer text-right">
 				<input class="btn btn-danger" type="reset" value="Reset">
 				<input class="btn btn-success" type="submit" value="Send" />
 			</div>
 			</form>
-			</div>
 	</div>
 </div>
 	

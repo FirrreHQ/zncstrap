@@ -1,8 +1,8 @@
 <? INC Header.tmpl ?>
 
-<div class="container">
+<div class="container col-md-10 col-md-offset-1">
 	<div class="panel panel-default">
-		<div class="panel-heading">Perform</div>
+		<div class="panel-heading">Perform &middot; Add a Command</div>
 			<div class="panel-body">
 				<form method="post" action="<? VAR URIPrefix TOP ?><? VAR ModPath ?>">
 				<? INC _csrf_check.tmpl ?>
@@ -14,13 +14,12 @@
 							<div class="alert alert-info help-block">Commands sent to the IRC server on connect, one per line.</div>
 						</div>
 				</div>
-  
-				<div class="btn-group pull-right">
-					<input class="btn btn-danger" type="reset" value="Reset">
-					<input class="btn btn-success" type="submit" name="save" value="Save" />
-				</div>
-				</form>
 			</div>
+			<div class="panel-footer text-right">
+				<input class="btn btn-danger" type="reset" value="Reset">
+				<input class="btn btn-success" type="submit" name="save" value="Save" />
+			</div>
+				</form>
 	</div>
 </div>
 

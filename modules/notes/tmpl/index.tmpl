@@ -1,14 +1,12 @@
 <? INC Header.tmpl ?>
 
-<div class="container">
+<div class="container col-md-10 col-md-offset-1">
 	<div class="panel panel-default">
-		<div class="panel-heading">Notes</div>
+		<div class="panel-heading">Notes &middot; Add A Note</div>
 			<div class="panel-body">
 				<form class="form-horizontal" method="post" action="<? VAR URIPrefix TOP ?><? VAR ModPath ?>addnote">
 				<? INC _csrf_check.tmpl ?>
-				<h3>Add A Note</h3>
-				<hr>
-		
+				
 				<div class="form-group">
 					<label for="inputKey" class="col-sm-2 control-label">Key:</label>
 						<div class="col-sm-10">
@@ -33,7 +31,7 @@
 						<tr>
 							<td>Key</td>
 							<td>Note</td>
-							<td></td>
+							<td>Action</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -47,12 +45,13 @@
 					</tbody>
 				</table>
 				<? ENDIF ?>
-				<div class="pull-right">
+				</div>
+				
+				<div class="panel-footer text-right">
 					<input class="btn btn-danger" type="reset" value="Reset">
 					<input class="btn btn-success" type="submit" name="add" value="Add Note"  />
 				</div>
 				</form>
-			</div>
 	</div>
 </div>
 	

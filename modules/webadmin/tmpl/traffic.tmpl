@@ -1,9 +1,60 @@
 <? INC Header.tmpl ?>
 
-<div class="container">
+<div class="container col-md-10 col-md-offset-1">
 	<div class="panel panel-default">
-		<div class="panel-heading">Information</div>
+		<div class="panel-heading">Traffic Information</div>
 			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-6"><div id="totalstats"></div></div>
+					<div class="col-md-6"><div id="usertraffic"></div></div>
+				</div>
+			
+			
+			<script type="text/javascript" src="//www.google.com/jsapi"></script>
+			<script>
+				google.load('visualization', '1.0', {'packages':['corechart']});
+				google.setOnLoadCallback(drawChart);
+					function drawChart() {
+						var data = google.visualization.arrayToDataTable([
+							['Task', 'ZNC Stats'],
+							['Users', <? VAR TotalUsers ?>],
+							['Networks', <? VAR TotalNetworks ?>]
+						]);
+						var options = {
+							width: 503,
+							pieHole: 0.3,
+							colors: ['#428bca', '#5bc0de'],
+							backgroundColor: 'transparent',
+							legend: {textStyle: {color: 'gray'}}
+						};
+						var chart = new google.visualization.PieChart(document.getElementById('totalstats'));
+						chart.draw(data, options);
+					}
+				</script>
+				<script>
+					google.load('visualization', '1.0', {'packages':['corechart']});
+					google.setOnLoadCallback(drawChart2);
+					function drawChart2() {
+						var data2 = google.visualization.arrayToDataTable([
+							['Task', 'User Traffic'],
+							['Attached Networks', <? VAR AttachedNetworks ?>],
+							['Client Connections', <? VAR TotalCConnections ?>],
+							['IRC Connections', <? VAR TotalIRCConnections ?>]
+						]);
+						var options2 = {
+							width: 503,
+							pieHole: 0.3,
+							colors: ['#5cb85c', '#f0ad4e', '#d9534f'],
+							backgroundColor: 'transparent',
+							legend: {textStyle: {color: 'gray'}}
+						};
+						var chart2 = new google.visualization.PieChart(document.getElementById('usertraffic'));
+						chart2.draw(data2, options2);
+					}
+			</script>
+ 
+			
+			
 				<table class="table table-bordered table-hover">
 					<tbody>
 						<tr>
@@ -72,10 +123,9 @@
 						<? ENDIF ?>
 					</tbody>
 				</table>
-				
+						
 <? IF IsAdmin && TrafficLoop ?>
-	<h3>Traffic</h3>
-	<hr>
+	<br />
 	<div class="row">
 		<div class="col-md-4 col-md-offset-8"> 
             <div class="input-group custom-search-form" style=".custom-search-form{margin-top:5px;}">

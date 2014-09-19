@@ -1,6 +1,6 @@
 <? INC Header.tmpl ?>
 
-<div class="container">
+<div class="container col-md-10 col-md-offset-1">
 	<div class="panel panel-default">
 		<div class="panel-heading">Stickychan</div>
 			<div class="panel-body">
@@ -9,8 +9,8 @@
 				<table class="table table-bordered table-hover">
 					<thead>
 						<tr>
-							<td>Name</td>
-							<td>Sticky</td>
+							<td>Channel Name</td>
+							<td>Enable / Disable</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -18,8 +18,8 @@
 						<tr>
 							<td><? VAR Name ?></td>
 							<td>
-								<div class="checkboxSwitchMini">
-									<input type="checkbox" id="stick_<? VAR Name ?>" name="stick_<? VAR Name ?>"<? IF Sticky ?> checked="checked"<? ENDIF ?> />
+								<div class="switch">
+									<input type="checkbox" id="stick_<? VAR Name ?>" name="stick_<? VAR Name ?>" class="cmn-toggle cmn-toggle-round-flat"<? IF Sticky ?> checked="checked"<? ENDIF ?> />
 									<label for="stick_<? VAR Name ?>"></label>
 								</div>
 							</td>
@@ -27,14 +27,13 @@
 					<? ENDLOOP ?>
 					</tbody>
 				</table>
-	
-				<div class="btn-group pull-right">
-					<input class="btn btn-danger" type="reset" value="Reset">
-					<input type="hidden" name="submitted" value="1" />
-					<input class="btn btn-success" type="submit" value="Save" />
-				</div>
-				</form>
 			</div>
+			<div class="panel-footer text-right">
+				<input class="btn btn-danger" type="reset" value="Reset">
+				<input type="hidden" name="submitted" value="1" />
+				<input class="btn btn-success" type="submit" value="Save" />
+			</div>
+				</form>
 	</div>
 </div>
 

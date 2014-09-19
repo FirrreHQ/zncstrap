@@ -1,6 +1,6 @@
 <? INC Header.tmpl ?>
 
-<div class="container">
+<div class="container col-md-10 col-md-offset-1">
 	<div class="panel panel-default">
 		<div class="panel-heading">Q Network Module</div>
 			<div class="panel-body">
@@ -26,15 +26,15 @@
 									<thead>
 										<tr>
 											<td>Status</td>
-											<td>Label</td>
+											<td>Settings</td>
 										</tr>
 									</thead>
 									<tbody>	
 									<? LOOP OptionLoop ?>			
 										<tr>
 											<td>
-												<div class="checkboxSwitch" title="<? VAR Tooltip ?>">
-													<input type="checkbox" name="<? VAR Name ?>" id="opt_<? VAR Name ?>" value="1"<? IF Checked ?> checked="checked"<? ENDIF ?><? IF Disabled ?> disabled="disabled"<? ENDIF ?> />
+												<div class="switch" title="<? VAR Tooltip ?>">
+													<input type="checkbox" name="<? VAR Name ?>" id="opt_<? VAR Name ?>" value="1" class="cmn-toggle cmn-toggle-round-flat"<? IF Checked ?> checked="checked"<? ENDIF ?><? IF Disabled ?>disabled="disabled"<? ENDIF ?>"/>
 													<label for="opt_<? VAR Name ?>"></label>
 												</div>
 											</td>
@@ -47,14 +47,13 @@
 								</table>
 							</div>				
 						</div>	
-
-						<div class="pull-right">
+			</div>
+						<div class="panel-footer text-right">
 							<input type="hidden" name="submitted" value="1" />
 							<input class="btn btn-danger" type="reset" value="Reset">
 							<input class="btn btn-success" type="submit" value="Save" />
 						</div>
-				</form>			
-			</div>	 
+				</form>				 
 	</div>
 </div>				
  
