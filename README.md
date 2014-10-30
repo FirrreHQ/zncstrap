@@ -1,7 +1,7 @@
 zncstrap
 ========
 
-A simple ZNC Web-Interface theme build with Twitter Bootstrap Framework.
+A simple ZNC Web Interface theme build with Twitter Bootstrap Framework.
 
 This 'dev' (development) branch is mainly for ZNC v.1.5-git or later.
 
