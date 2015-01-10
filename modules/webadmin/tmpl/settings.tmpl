@@ -65,7 +65,7 @@
 						<? ENDIF ?>
 						</td>
 					</tr>
-				<? ENDLOOP ?>
+<? ENDLOOP ?>
 					<tr>
 						<form action="add_listener" method="post">
 							<? INC _csrf_check.tmpl ?>
@@ -121,7 +121,7 @@
 					<select class="form-control" id="inputSkins" name="skin">
 						<? LOOP SkinLoop ?>
 							<option value="<? VAR Name ?>"<? IF Checked ?> selected="selected"<? ENDIF ?>><? IF Name == "_default_" ?>Default<? ELSE ?><? VAR Name ?><? ENDIF ?></option>
-						<? ENDLOOP ?>
+<? ENDLOOP ?>
 					</select>
 				</div>
 		</div>
@@ -176,7 +176,8 @@
 		<div class="form-group">
 			<label for="inputMOTD" class="col-sm-2 control-label">MOTD:</label>
 				<div class="col-sm-10">
-					<textarea type="text" class="form-control" id="inputMOTD" name="motd" cols="70" rows="5" class="monospace"><? LOOP MOTDLoop ?><? VAR Line ?><? ENDLOOP ?></textarea>
+					<textarea type="text" class="form-control" id="inputMOTD" name="motd" cols="70" rows="5" class="monospace"><? LOOP MOTDLoop ?><? VAR Line ?>
+<? ENDLOOP ?></textarea>
 					<div class="alert alert-info help-block">"Message of the Day", sent to all ZNC users on connect.</div>
 				</div>
 		</div>
@@ -184,10 +185,8 @@
 		<div class="form-group">
 			<label for="inputBindHosts" class="col-sm-2 control-label">BindHosts:</label>
 				<div class="col-sm-10">
-					<textarea type="text" class="form-control" id="inputBindHosts" name="bindhosts" rows="5">
-					<? LOOP BindHostLoop ?>
-					<? VAR BindHost ?>
-					<? ENDLOOP ?>
+					<textarea type="text" class="form-control" id="inputBindHosts" name="bindhosts" rows="5"><? LOOP BindHostLoop ?><? VAR BindHost ?>
+<? ENDLOOP ?>
 					</textarea>
 					<div class="alert alert-info help-block">One host name or IP entry per line.</div>
 				</div>
@@ -225,7 +224,7 @@
 						</td>
 						<td class="mod_descr"><? VAR Description ?></td>
 					</tr>
-					<? ENDLOOP ?>
+<? ENDLOOP ?>
 				</tbody>
 			</table>
 
