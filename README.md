@@ -37,7 +37,7 @@ A: Mainly because the different HTML tags and attributes used in zncstrap, as pa
 A: You should overwrite everything from '~/zncstrap/modules' to "~/share/znc/modules" or "/usr/local/share/znc/modules" on your machine.
 
 
-**Q: Which branch is being actively maintained?
+**Q: Which branch is being actively maintained?**
 
 A: The 'dev' branch. As for the 'master' branch, it should work with the stable release, version 1.4 with no hiccups.
 
