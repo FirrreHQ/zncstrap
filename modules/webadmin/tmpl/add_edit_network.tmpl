@@ -15,6 +15,7 @@
 			<ul class="nav nav-tabs">
 				<li class="active"><a href="#netinfotab" data-toggle="tab">Network Info</a></li>
 				<li><a href="#floodprotab" data-toggle="tab">Flood Protection</a></li>
+				<li><a href="#charencodetab" data-toggle="tab">Character Encoding</a></li>
 				<li><a href="#channelstab" data-toggle="tab">Channels</a></li>
                 <li><a href="#modulestab" data-toggle="tab">Modules</a></li>
             </ul>
@@ -104,6 +105,14 @@
 						<span class="help-block">One server per line, "host [[+]port] [password]", + means SSL</span>
 					</div>
 				</div>	
+				
+				<div class="form-group">
+				<label for="inputTrustedSSL" class="col-sm-2 control-label">Trusted SSL fingerprints of this IRC network:</label>
+					<div class="col-sm-10">
+						<textarea class="form-control" name="fingerprints" rows="5"><? LOOP TrustedFingerprints ?><? VAR FP ?><? ENDLOOP ?></textarea>
+						<span class="help-block">When these certificates are encountered, checks for hostname, expiration date, CA are skipped</span>
+					</div>
+				</div>			
 			</div> <!-- Network Info -->
 			 
 			 <!-- Flood Protection -->
@@ -114,7 +123,7 @@
 						<div class="switch">
 							<input type="checkbox" name="floodprotection" id="floodprotection_checkbox" class="cmn-toggle cmn-toggle-round-flat" onchange="floodprotection_change();" <? IF FloodProtection ?>checked="checked"<? ENDIF ?> />
 							<label for="floodprotection_checkbox"></label>
-							<span class="help-block">This prevents 'excess flood' errors, which occur, when an IRC robot is command flooded or spammed.</span>
+							<span class="help-block">You might enable the flood protection. This prevents `excess flood' errors, which occur, when your IRC bot is command flooded or spammed. After changing this, reconnect ZNC to server</span>
 						</div>
 					</div>
 				</div>	 
@@ -122,26 +131,42 @@
 				<div class="form-group">
 				<label for="inputFloodproRate" class="col-sm-2 control-label">Flood protection rate:</label>
 					<div class="col-sm-10">
-						<input class="form-control" type="number" name="floodrate" min="0.3" step="0.05" id="floodrate" placeholder="The number of seconds per line." <? IF FloodProtection ?> value="<? VAR FloodRate ?>" <? ELSE ?> value="1.00" disabled="disabled" <? ENDIF ?> /> seconds per line
+						<input class="form-control" type="number" name="floodrate" min="0.3" step="0.05" id="floodrate" placeholder="The number of seconds per line." <? IF FloodProtection ?> value="<? VAR FloodRate ?>" <? ELSE ?> value="1.00" disabled="disabled" <? ENDIF ?> />
+						<span class="help-block">The number of seconds per line. After changing this, reconnect ZNC to server</span>
 					</div>
 				</div>			
 			 
+				
 				<div class="form-group">
 				<label for="inputFloodproBurst" class="col-sm-2 control-label">Flood protection burst:</label>
 					<div class="col-sm-10">
-						<input type="number" class="form-control" name="floodburst" min="1" id="inputFloodproBurst floodburst" placeholder="Defines the number of lines, which can be sent immediately." <? IF FloodProtection ?> value="<? VAR FloodBurst ?>" <? ELSE ?> value="4" disabled="disabled" <? ENDIF ?> /> lines can be sent immediately
+						<input type="number" class="form-control" name="floodburst" min="1" id="inputFloodproBurst floodburst" <? IF FloodProtection ?> value="<? VAR FloodBurst ?>" <? ELSE ?> value="4" disabled="disabled" <? ENDIF ?> /> 
+						<span class="help-block">Defines the number of lines, which can be sent immediately. After changing this, reconnect ZNC to server</span>
 					</div>
 				</div>			
-			
+				
 				<div class="form-group">
-				<label for="inputJoinDelay" class="col-sm-2 control-label">Channel join delay:</label>
+				<label for="inputChanjoindelay" class="col-sm-2 control-label">Channel join delay:</label>
 					<div class="col-sm-10">
-						<input class="form-control" type="number" name="joindelay" id="joindelay" min="0" placeholder="Defines the delay in seconds, until channels are joined after getting connected." value="<? VAR JoinDelay ?>"/> seconds
+						<input type="number" class="form-control" name="joindelay" min="0" id="inputChanjoindelay joindelay" value="<? VAR JoinDelay ?>" /> 
+						<span class="help-block">Defines the delay in seconds, until channels are joined after getting connected</span>
 					</div>
-				</div>				 
+				</div>		
+
 				<script type="text/javascript">floodprotection_change();</script>
 			</div> <!-- Flood Protection -->
-				
+			
+			
+			 <!-- Server Encoding -->
+			<div class="tab-pane fade" id="charencodetab">
+				<div class="form-group">
+					<label for="inputChanencode" class="col-sm-2 control-label">Server encoding:</label>
+						<div class="col-sm-10">
+							<? INC encoding_settings.tmpl ?>
+						</div>	
+				</div>		
+			</div> <!-- Server Encoding -->
+			
 			<!-- Channels -->
 			<div class="tab-pane fade" id="channelstab">
 				<? IF !Edit ?>

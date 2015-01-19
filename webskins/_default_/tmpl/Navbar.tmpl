@@ -110,7 +110,7 @@
                                         <p class="text-left"><strong>User: <? VAR SessionUser ?></strong></p>
                                         <p class="text-left small">IP Address: <? VAR SessionIP ?></p>
                                         <p class="text-left">
-                                            <a href="<? IF GlobalModLoop ?>/mods/global/webadmin/edituser<? ELSE ?>/mods/user/webadmin/edituser<? ENDIF ?>" class="btn btn-primary btn-block btn-sm"><i class="fa fa-wrench"></i> Edit Settings</a>
+                                            <a href="<? VAR URIPrefix TOP ?><? VAR ModPath ?>/edituser" class="btn btn-primary btn-block btn-sm"><i class="fa fa-wrench"></i> Edit Settings</a>
                                         </p>
                                     </div>
                                 </div>

@@ -187,7 +187,9 @@
 						<div class="form-group">
 						<label for="inputMOTD" class="col-sm-2 control-label">MOTD:</label>
 							<div class="col-sm-10">
-								<textarea type="text" class="form-control" id="inputMOTD" name="motd" cols="70" rows="5" class="monospace"><? LOOP MOTDLoop ?><? VAR Line ?><? ENDLOOP ?></textarea>
+								<textarea class="form-control" id="inputMOTD" name="motd" rows="5" class="monospace"><? LOOP MOTDLoop ?><? VAR Line ?>
+<? ENDLOOP ?>
+</textarea>
 								<div class="alert alert-info help-block">"Message of the Day", sent to all ZNC users on connect.</div>
 							</div>
 						</div>
