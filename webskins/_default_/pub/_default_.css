@@ -8,7 +8,7 @@ body {
 }
 /* for BindHosts textarea */
 .form-control {
-  white-space:nowrap;
+  white-space:inherit;
 }
 /* for Traffic page */
 .progress {
