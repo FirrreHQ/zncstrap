@@ -305,6 +305,7 @@
 					<label for="inputtimeFormat" class="col-sm-2 control-label">Timestamp Format:</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="inputtimeFormat" name="timestampformat" value="<? VAR TimestampFormat ?>" placeholder="The format for the timestamps used in buffers, for example [%H:%M:%S]." />
+							<div class="alert alert-info help-block">This setting is ignored in new IRC clients, which use server-time. If your client supports server-time, change timestamp format in client settings instead.</div>
 						</div>
 					</div>
 	
