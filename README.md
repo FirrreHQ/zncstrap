@@ -3,7 +3,11 @@ zncstrap
 
 A simple ZNC Web Interface theme build with Twitter Bootstrap Framework.
 
-This 'dev' (development) branch is mainly for ZNC v.1.5-git or later.
+This 'dev' (development) branch is mainly for ZNC v.1.7-git or later. 
+
+### Update
+
+June 11th 2015: Work is in progress. Some bits might not run smoothly (broken) on ZNC v.1.7-git as of now. Hang in there.
 
 ### To-Do
 
