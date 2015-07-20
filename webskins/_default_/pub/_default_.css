@@ -1,13 +1,14 @@
 /* Some minor re-design for zncstrap */
 body {
   padding-top: 80px;
-} 
+}
 #footer {
   height: 60px;
   padding-top: 30px;
 }
 /* for BindHosts textarea */
-.form-control {
+textarea.form-control {
+  height: auto;
   word-wrap: break-word;
   white-space: -moz-pre-wrap;
   white-space: pre-wrap;
@@ -17,9 +18,7 @@ body {
   margin-bottom: 0px;
 }
 /* Switch & SwitchMini checkbox re-design */
-input[type=checkbox] {
-	visibility: hidden;
-}
+
 .checkboxSwitch,
 .checkboxSwitchMini {
 	position: relative;

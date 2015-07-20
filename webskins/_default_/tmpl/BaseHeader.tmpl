@@ -1,8 +1,10 @@
 <? INC DocType.tmpl ?>
 <? ADDROW CSSLoop HREF=/skinfiles/_default_/bootstrap.min.css ?>
+<? ADDROW CSSLoop HREF=/skinfiles/_default_/selectize.bootstrap3.css ?>
 <? ADDROW CSSLoop HREF=/skinfiles/_default_/font-awesome.min.css ?>
 <? ADDROW JSLoop HREF=/skinfiles/_default_/jquery.min.js ?>
 <? ADDROW JSLoop HREF=/skinfiles/_default_/bootstrap.min.js ?>
+<? ADDROW JSLoop HREF=/skinfiles/_default_/selectize.min.js ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta charset="UTF-8" />
@@ -13,7 +15,7 @@
 	<?ENDLOOP?>
 	<? LOOP JSLoop ?>
 	<?IF HREF?><script type="text/javascript" src="<? VAR URIPrefix TOP ?><? VAR HREF ?>"></script><?ENDIF?>
-	<?ENDLOOP?>	
+	<?ENDLOOP?>
 	 <? INC ExtraHeader.tmpl ?>
 </head>
 <body>
