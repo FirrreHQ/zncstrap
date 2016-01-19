@@ -18,7 +18,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cog"></i> Global Modules <b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<? LOOP GlobalModLoop SORTASC=ModName ?>
-									<li class="modtitle<? IF Active ?> active<? ENDIF ?>"><a href="/mods/global/<? VAR ModName ?>"><? VAR Title ?></a></li>
+									<li class="modtitle<? IF Active ?> active<? ENDIF ?>"><a href="<? VAR URIPrefix TOP ?>/mods/global/<? VAR ModName ?>"><? VAR Title ?></a></li>
 								<? ENDLOOP ?>
 							</ul>
 					</li>
