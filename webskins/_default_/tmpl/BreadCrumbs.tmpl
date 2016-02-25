@@ -1,7 +1,7 @@
 <? IF ModName ?>
 <div class="container col-md-10 col-md-offset-1">
 	<ol class="breadcrumb">
-		<li><a href="/">Home</a></li>
+		<li><a href="<? VAR URIPrefix TOP ?>/">Home</a></li>
 		<li><a href="#"><? VAR ModName ?></a></li>
 		<? REM ?><? IF PageName ?><li><a href="#"><? VAR PageName ?></a></li><? ENDIF ?><? ENDREM ?>
 		<? IF Title && Title != *ModName ?><li class="active"><? VAR Title ?></li><? ENDIF ?>
