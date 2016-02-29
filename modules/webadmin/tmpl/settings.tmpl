@@ -208,11 +208,9 @@
 						<div class="form-group">
 						<label for="inputBindHosts" class="col-sm-2 control-label">BindHosts:</label>
 							<div class="col-sm-10">
-								<textarea type="text" class="form-control" id="inputBindHosts" name="bindhosts" rows="5">
-								<? LOOP BindHostLoop ?>
-								<? VAR BindHost ?>
-								<? ENDLOOP ?>
-								</textarea>
+								<textarea type="text" class="form-control" id="inputBindHosts" name="bindhosts" rows="5"><? LOOP BindHostLoop ?><? VAR BindHost ?>
+<? ENDLOOP ?>
+</textarea>
 								<div class="alert alert-info help-block">One host name or IP entry per line.</div>
 							</div>
 						</div>
